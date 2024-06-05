@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KIem tra</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .header {
+            background-color: #fff;
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 150px; /* Điều chỉnh kích thước logo theo ý muốn */
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+        }
+
+        .menu {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .menu li {
+            margin-left: 30px; /* Điều chỉnh khoảng cách giữa các mục */
+            position: relative;
+        }
+
+        .menu li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .menu li a:hover {
+            color: #e74c3c; /* Màu khi di chuột */
+        }
+
+        .sub-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 150px; /* Điều chỉnh chiều rộng menu con */
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            padding: 10px 0;
+            z-index: 1;
+        }
+
+        .sub-menu li {
+            margin-bottom: 10px;
+        }
+
+        .sub-menu li a {
+            display: block;
+            padding: 10px 0;
+            text-decoration: none;
+            color: #333;
+            transition: background-color 0.3s;
+        }
+
+        .sub-menu li a:hover {
+            background-color: #f0f0f0;
+        }
+
+        .menu li:hover .sub-menu {
+            display: block;
+        }
+        ul{
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo"> <img src="https://ditmtvz.github.io/gb/assets/img/gb-farm/logo.png" alt=""></div>
+        <div class="nav-menu">
+            <ul class="menu">
+                <li><a href="#">Trang chủ</a></li>
+                <li>
+                    <a href="#">Danh mục bánh ngọt</a>
+                    <ul class="sub-menu">
+                        <li><a href="#">Bánh sinh nhật</a></li>
+                        <li><a href="#">Bánh lẻ</a></li>
+                        <li><a href="#">Gift Set</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Tuyển dụng</a></li>
+                <li><a href="#">Liên hệ</a></li>
+                <li>
+                    <a href="#">Tài khoản</a>
+                    <ul class="sub-menu">
+                        <li><a href="#">Đăng ký</a></li>
+                        <li><a href="#">Đăng nhập</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>

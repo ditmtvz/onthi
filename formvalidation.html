@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <style>
+        input{
+            padding-top: 10px;
+            margin-top: 10px;
+        }
+        .form{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .menu-row{
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+        }
+
+
+    </style>
+</head>
+<body>
+   
+    <div class="form">
+        <form id="myForm">
+        <h1>Form Validation</h1>
+        <div class="menu-row">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+      
+        <div class="menu-row">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+           
+        </div>
+         <div class="menu-row">
+             <label for="password">Password:</label>
+             <input type="password" id="password" name="password" required>
+           
+        </div>
+        <div class="menu-row">
+           <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" required>
+        </div>
+        
+        <div class="menu-row">
+            <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required>
+        </div>
+       
+         <div class="menu-row">
+             <label for="number">Number:</label>
+        <input type="number" id="number" name="number" required>
+        </div>
+      
+         <div class="menu-row">
+            <label for="url">URL:</label>
+            <input type="url" id="url" name="url" required> 
+        </div>
+
+         <div class="menu-row">
+            <label for="color">Color:</label>
+        <input type="color" id="color" name="color" required>
+        </div>
+       
+         <div class="menu-row">
+            <label for="file">File:</label>
+        <input type="file" id="file" name="file" required>
+        </div>
+       
+        <div class="menu-row">
+            <label for="textarea">Textarea:</label>
+        <textarea id="textarea" name="textarea" required></textarea>
+        </div>
+       
+         <div class="menu-row">
+           <input type="submit" value="Submit">
+        </div>
+        
+    </form>
+
+    </div>
+   
+
+    <script>
+
+         function layNgayThangNam(){
+            var dateIn= document.getElementById('date').value;
+            dateOut = new Date(dateIn);
+            alert(dateOut.getDay());
+            alert(dateOut.getMonth()+1);
+            alert(dateOut.getFullYear());
+        }
+
+
+        const form = document.getElementById("myForm");
+        form.addEventListener("submit", function(event) {
+            event.preventDefault(); // Ngăn form submit mặc định
+            let isValid = true; // Khởi tạo isValid là true
+
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            const phone = document.getElementById("phone").value;
+            const date = document.getElementById("date").value;
+            const number = document.getElementById("number").value;
+            const url = document.getElementById("url").value;
+            const color = document.getElementById("color").value;
+            const file = document.getElementById("file").files[0];
+            const textarea = document.getElementById("textarea").value;
+
+            // Kiểm tra name (tên)
+            if (name === "" || name.length < 3 || name.length > 50) {
+                alert("Tên không hợp lệ! Vui lòng nhập tên từ 3 đến 50 ký tự.");
+                isValid = false;
+            }
+
+            // Kiểm tra email
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                alert("Email không hợp lệ!");
+                isValid = false;
+            }
+
+            // Kiểm tra password (mật khẩu)
+            if (password === "" || password.length < 8) {
+                alert("Mật khẩu không hợp lệ! Vui lòng nhập mật khẩu ít nhất 8 ký tự.");
+                isValid = false;
+            }
+
+            // Kiểm tra phone (số điện thoại)
+            if (!/^\d{10,11}$/.test(phone)) {
+                alert("Số điện thoại không hợp lệ!");
+                isValid = false;
+            }
+
+            // Kiểm tra date (ngày tháng)
+            if (date === "") {
+                alert("Vui lòng chọn ngày tháng!");
+                isValid = false;
+            }
+
+            // Kiểm tra number (số)
+            if (number === "" || isNaN(number)) {
+                alert("Vui lòng nhập một số!");
+                isValid = false;
+            }
+
+            // Kiểm tra url
+            if (!/^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/.test(url)) {
+                alert("URL không hợp lệ!");
+                isValid = false;
+            }
+
+            // Kiểm tra file
+            if (file === undefined || file.size > 1048576) { // 1MB
+                alert("Vui lòng chọn file! Kích thước file tối đa là 1MB.");
+                isValid = false;
+            }
+
+            // Kiểm tra textarea
+            if (textarea === "" || textarea.length < 10) {
+                alert("Vui lòng nhập ít nhất 10 ký tự trong textarea!");
+                isValid = false;
+            }
+
+            if (isValid) { // Nếu isValid vẫn là true, form hợp lệ
+                alert("Form hợp lệ! Dữ liệu đã được gửi.");
+                // Thực hiện submit form (Ví dụ: gửi dữ liệu lên server)
+            }
+
+            layNgayThangNam();
+        });
+
+
+
+       
+    </script>
+</body>
+</html>

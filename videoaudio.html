@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ví dụ chèn audio và video</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+
+    video {
+      height: auto;
+    }
+
+
+
+    ul {
+      list-style-type: disc;
+      margin-left: 40px;
+    }
+
+    li {
+      margin-bottom: 5px;
+    }
+
+    b {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Chèn Audio</h1>
+  <audio controls>
+    <source src="./video/y2mate.com - Thanh Xuân  Da LAB Official MV.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <br><br>
+
+  <h1>Chèn Video</h1>
+  <video width="640" height="360" controls autoplay>
+    <source src="./video/y2mate.com - Thanh Xuân  Da LAB Official MV_480p.mp4" type="video/mp4">
+    Your browser does not support the video element.
+  </video>
+
+  <br><br>
+
+  <h2>Thuộc tính audio</h2>
+  <ul>
+    <li><b>controls:</b> Hiển thị các điều khiển phát lại (play, pause, volume, ...)</li>
+    <li><b>autoplay:</b> Tự động phát khi trang web tải xong (giá trị: true/false)</li>
+    <li><b>loop:</b> Phát lại lặp đi lặp lại (giá trị: true/false)</li>
+    <li><b>muted:</b> Tắt tiếng mặc định (giá trị: true/false)</li>
+    <li><b>preload:</b> Nạp trước audio (giá trị: "none", "metadata", "auto")</li>
+    <li><b>src:</b> URL của tệp audio</li>
+    <li><b>type:</b> Kiểu tệp audio (ví dụ: "audio/mpeg", "audio/ogg")</li>
+  </ul>
+
+  <h2>Thuộc tính video</h2>
+  <ul>
+    <li><b>width:</b> Chiều rộng của video (số pixel)</li>
+    <li><b>height:</b> Chiều cao của video (số pixel)</li>
+    <li><b>controls:</b> Hiển thị các điều khiển phát lại (play, pause, volume, ...)</li>
+    <li><b>autoplay:</b> Tự động phát khi trang web tải xong (giá trị: true/false)</li>
+    <li><b>loop:</b> Phát lại lặp đi lặp lại (giá trị: true/false)</li>
+    <li><b>muted:</b> Tắt tiếng mặc định (giá trị: true/false)</li>
+    <li><b>preload:</b> Nạp trước video (giá trị: "none", "metadata", "auto")</li>
+    <li><b>poster:</b> Hình ảnh hiển thị trước khi video được phát (đường dẫn đến hình ảnh)</li>
+    <li><b>src:</b> URL của tệp video</li>
+    <li><b>type:</b> Kiểu tệp video (ví dụ: "video/mp4", "video/ogg")</li>
+  </ul>
+
+</body>
+</html>
